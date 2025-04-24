@@ -1,7 +1,8 @@
 def total():
     producto = input("ingrese el nombre del producto: ")
 
-    while True: #validamos que el usuario si digite un valor correcto.
+#validamos que el usuario si digite un valor correcto.
+    while True: 
         try:
             precioUnitario = float(input("ingrese el precio del producto: "))
             if precioUnitario < 0:
@@ -11,7 +12,8 @@ def total():
         except ValueError:
             print("por favor, ingrese el valor correcto.")
 
-    while True: #validamos que el usuario digite una cantidad correcta.
+#validamos que el usuario digite una cantidad correcta.
+    while True: 
         try:
             cantidad = int( input("ingresa la cantidad de productos: "))
             if cantidad < 1:
@@ -21,6 +23,7 @@ def total():
         except ValueError:
             print("Por favor, ingrese una cantidad correcta.")
 
+#verificamos que el usuario utilice un valor correcto para el descuento
     while True: 
         try: 
             descuento = float(input("ingrese el porcentaje del descuento: "))
@@ -31,12 +34,13 @@ def total():
         except ValueError:
             print("por favor ingrese un descuento valido")
 
-    # debemos de calcular el valor total
+#debemos de calcular el valor total
 
     subtotal =  precioUnitario*cantidad
     totalDesceunto = subtotal*(descuento/100)
     Valortotal = subtotal - totalDesceunto
 
+#impresiones que necesitamos para que el usuario pueda visualizar.
     print("Resumen de la compra")
     print(f"producto: {producto}")
     print(f"precio unitario: ${precioUnitario:.2f}")
